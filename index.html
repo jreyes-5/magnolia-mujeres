@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magnolia Mujeres — Handmade Jewelry</title>
+  <meta name="description" content="Handcrafted jewelry made with intention by a family of women. Each piece is one of a kind." />
+  <meta property="og:title" content="Magnolia Mujeres — Handmade Jewelry" />
+  <meta property="og:description" content="Handcrafted jewelry made with intention by a family of women. Each piece is one of a kind." />
+  <meta property="og:url" content="https://magnoliamujeres.com" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://magnoliamujeres.com" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream:      #FAF6EF;
+      --green-deep: #2D4A3E;
+      --green-soft: #8FAF8A;
+      --gold:       #C9A96E;
+      --linen:      #E8D5C0;
+      --green-dark: #1A2E26;
+      --serif:      'Cormorant Garamond', Georgia, serif;
+      --sans:       'Jost', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--green-deep);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(250,246,239,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(45,74,62,0.1);
+      transition: padding 0.3s ease;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--green-deep);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green-deep);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cream) !important;
+      background: var(--green-deep);
+      padding: 0.6rem 1.4rem;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--green-dark) !important; color: var(--cream) !important; }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 6rem;
+      overflow: hidden;
+    }
+
+    /* Magnolia SVG watermark */
+    .hero-watermark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: min(80vw, 680px);
+      opacity: 0.07;
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green-soft);
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(3.2rem, 8vw, 7rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      color: var(--green-deep);
+      margin-bottom: 1.6rem;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--green-deep);
+      opacity: 0.75;
+      max-width: 520px;
+      margin-bottom: 3rem;
+      line-height: 1.6;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cream);
+      background: var(--green-deep);
+      padding: 0.85rem 2.2rem;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--green-dark); transform: translateY(-1px); }
+
+    .btn-secondary {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green-deep);
+      background: transparent;
+      padding: 0.85rem 2.2rem;
+      border: 1px solid var(--green-soft);
+      border-radius: 2px;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s, transform 0.15s;
+    }
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-1px); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green-soft);
+    }
+    .hero-scroll::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom, var(--green-soft), transparent);
+      animation: scrollLine 2s ease-in-out infinite;
+    }
+    @keyframes scrollLine {
+      0%, 100% { opacity: 0.4; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.1); }
+    }
+
+    /* ── Section scaffold ── */
+    section { padding: 6rem 2rem; }
+
+    .section-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green-soft);
+      margin-bottom: 0.9rem;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--green-deep);
+      margin-bottom: 1.2rem;
+    }
+    .section-title em { font-style: italic; color: var(--gold); }
+
+    .section-body {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.8;
+      color: var(--green-deep);
+      opacity: 0.8;
+      max-width: 600px;
+    }
+
+    /* ── Collection photo (group shot) ── */
+    .collection-photo {
+      margin-bottom: 3.5rem;
+      border-radius: 3px;
+      overflow: hidden;
+      position: relative;
+    }
+    .collection-photo img {
+      width: 100%;
+      max-height: 560px;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+    .collection-photo-caption {
+      font-family: var(--serif);
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--green-deep);
+      opacity: 0.6;
+      text-align: center;
+      margin-top: 0.9rem;
+    }
+
+    /* ── Collection ── */
+    #collection { background: var(--linen); }
+
+    .collection-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 3.5rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .piece-card {
+      background: var(--cream);
+      border-radius: 3px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .piece-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(45,74,62,0.12);
+    }
+
+    .piece-img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: var(--green-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .piece-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .piece-img--placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.45;
+    }
+    .piece-img-inner svg { width: 44px; height: 44px; }
+    .piece-img-label {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green-dark);
+    }
+
+    /* Subtle gradient overlay on placeholder */
+    .piece-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(143,175,138,0.15), rgba(45,74,62,0.08));
+      pointer-events: none;
+    }
+
+    .piece-info {
+      padding: 1.4rem 1.6rem 1.8rem;
+    }
+
+    .piece-tag {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green-soft);
+      margin-bottom: 0.5rem;
+    }
+
+    .piece-name {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--green-deep);
+      margin-bottom: 0.4rem;
+    }
+
+    .piece-desc {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--green-deep);
+      opacity: 0.65;
+      line-height: 1.6;
+      margin-bottom: 1.1rem;
+    }
+
+    .piece-inquire {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid var(--linen);
+      transition: border-color 0.2s, color 0.2s;
+      padding-bottom: 2px;
+    }
+    .piece-inquire:hover { border-color: var(--gold); }
+
+    /* ── Showcase cards ── */
+    .showcase-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      margin-bottom: 5rem;
+      padding-bottom: 5rem;
+      border-bottom: 1px solid rgba(143,175,138,0.2);
+    }
+    .showcase-card:last-child { border-bottom: none; margin-bottom: 0; }
+    .showcase-card--reverse { direction: rtl; }
+    .showcase-card--reverse > * { direction: ltr; }
+
+    .showcase-img {
+      border-radius: 3px;
+      overflow: hidden;
+      position: sticky;
+      top: 100px;
+    }
+    .showcase-img img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+    }
+
+    .showcase-title {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--green-deep);
+      margin-bottom: 1rem;
+    }
+    .showcase-title em { font-style: italic; color: var(--gold); }
+
+    .showcase-desc {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--green-deep);
+      opacity: 0.75;
+      margin-bottom: 2rem;
+    }
+
+    /* Forever flowers sub-items */
+    .showcase-items { display: flex; flex-direction: column; gap: 1.2rem; }
+
+    .showcase-item {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.9rem;
+      background: var(--cream);
+      border-radius: 3px;
+      border: 1px solid rgba(143,175,138,0.2);
+    }
+    .showcase-item-img {
+      width: 64px;
+      height: 64px;
+      border-radius: 2px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .showcase-item-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .showcase-item-name {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--green-deep);
+      margin-bottom: 0.2rem;
+    }
+    .showcase-item-desc {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: var(--green-deep);
+      opacity: 0.6;
+      line-height: 1.5;
+    }
+
+    /* Bookmark list */
+    .bookmark-list { display: flex; flex-direction: column; gap: 0; }
+    .bookmark-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid rgba(143,175,138,0.15);
+    }
+    .bookmark-row:last-child { border-bottom: none; }
+    .bookmark-name {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--green-deep);
+      white-space: nowrap;
+    }
+    .bookmark-detail {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: var(--green-deep);
+      opacity: 0.55;
+      text-align: right;
+    }
+
+    @media (max-width: 900px) {
+      .showcase-card { grid-template-columns: 1fr; gap: 2rem; direction: ltr; }
+      .showcase-card--reverse { direction: ltr; }
+      .showcase-img { position: static; }
+      .showcase-img img { aspect-ratio: 16/9; object-position: center 30%; }
+      .bookmark-row { flex-direction: column; gap: 0.15rem; }
+      .bookmark-detail { text-align: left; }
+    }
+
+    /* ── Story ── */
+    #story {
+      background: var(--cream);
+    }
+
+    .story-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .story-visual {
+      aspect-ratio: 3/4;
+      background: var(--linen);
+      border-radius: 3px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .story-visual-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      opacity: 0.4;
+    }
+    .story-visual-inner svg { width: 52px; height: 52px; }
+    .story-visual-label {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green-deep);
+    }
+
+    .story-text { }
+
+    .story-text p {
+      font-family: var(--serif);
+      font-size: 1.18rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--green-deep);
+      margin-bottom: 1.5rem;
+    }
+    .story-text p:last-of-type { margin-bottom: 2rem; }
+
+    .story-details {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(143,175,138,0.3);
+    }
+    .story-detail { }
+    .story-detail-label {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--green-soft);
+      margin-bottom: 0.3rem;
+    }
+    .story-detail-value {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--green-deep);
+    }
+
+    /* ── Process ── */
+    #process {
+      background: var(--green-dark);
+    }
+    #process .section-eyebrow { color: var(--green-soft); }
+    #process .section-title { color: var(--cream); }
+    #process .section-title em { color: var(--gold); }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+
+    .process-step { }
+    .process-step-num {
+      font-family: var(--serif);
+      font-size: 3.5rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--gold);
+      opacity: 0.6;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .process-step-title {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 0.7rem;
+    }
+    .process-step-body {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--cream);
+      opacity: 0.65;
+    }
+
+    /* ── Inquire ── */
+    #inquire {
+      background: var(--cream);
+    }
+
+    .inquire-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .inquire-left { }
+    .inquire-left .section-body { margin-bottom: 3rem; }
+
+    .inquire-channels {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .channel-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.1rem 1.4rem;
+      border: 1px solid rgba(143,175,138,0.4);
+      border-radius: 3px;
+      text-decoration: none;
+      color: var(--green-deep);
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    }
+    .channel-link:hover {
+      border-color: var(--gold);
+      background: rgba(201,169,110,0.04);
+      transform: translateX(3px);
+    }
+    .channel-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--linen);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .channel-icon svg { width: 18px; height: 18px; }
+    .channel-text { }
+    .channel-label {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--green-soft);
+      margin-bottom: 0.15rem;
+    }
+    .channel-value {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--green-deep);
+    }
+
+    /* Contact form */
+    .inquire-form { }
+    .inquire-form .form-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--green-soft);
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-group label {
+      display: block;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green-deep);
+      opacity: 0.7;
+      margin-bottom: 0.5rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: transparent;
+      border: 1px solid rgba(143,175,138,0.45);
+      border-radius: 2px;
+      padding: 0.8rem 1rem;
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--green-deep);
+      outline: none;
+      transition: border-color 0.2s;
+      appearance: none;
+    }
+    .form-group select {
+      background: var(--cream);
+      cursor: pointer;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    .form-submit {
+      width: 100%;
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cream);
+      background: var(--green-deep);
+      border: none;
+      padding: 1rem;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .form-submit:hover { background: var(--green-dark); transform: translateY(-1px); }
+
+    .form-note {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      color: var(--green-deep);
+      opacity: 0.5;
+      margin-top: 0.8rem;
+      line-height: 1.5;
+    }
+
+    /* ── Etsy banner ── */
+    .etsy-banner {
+      background: var(--linen);
+      border-top: 1px solid rgba(143,175,138,0.25);
+      padding: 1.4rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .etsy-banner p {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--green-deep);
+      opacity: 0.75;
+    }
+    .etsy-banner a {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green-deep);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+    .etsy-banner a:hover { color: var(--gold); }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--green-dark);
+      color: var(--cream);
+      padding: 3.5rem 3rem;
+    }
+    .footer-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+    }
+    .footer-brand { }
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 0.6rem;
+    }
+    .footer-logo span { color: var(--gold); }
+    .footer-tagline {
+      font-family: var(--serif);
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--cream);
+      opacity: 0.5;
+    }
+
+    .footer-links { display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer-links a {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      color: var(--cream);
+      opacity: 0.55;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .footer-links a:hover { opacity: 1; }
+
+    .footer-social { display: flex; gap: 1rem; }
+    .footer-social a {
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(250,246,239,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cream);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
+    .footer-social svg { width: 16px; height: 16px; }
+
+    .footer-bottom {
+      max-width: 1180px;
+      margin: 2.5rem auto 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(250,246,239,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .footer-bottom p {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      color: var(--cream);
+      opacity: 0.35;
+      letter-spacing: 0.06em;
+    }
+    .footer-bottom a {
+      color: var(--cream);
+      opacity: 0.5;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .footer-bottom a:hover { opacity: 0.9; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      nav { padding: 1.1rem 1.5rem; }
+      .nav-links { gap: 1.4rem; }
+      .story-layout,
+      .inquire-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .story-visual { aspect-ratio: 16/9; max-height: 280px; }
+      .footer-inner { flex-direction: column; }
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.2rem; }
+      .nav-links { display: none; }
+      section { padding: 4rem 1.2rem; }
+      .collection-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .process-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      footer { padding: 2.5rem 1.2rem; }
+      .etsy-banner { padding: 1.2rem 1.5rem; }
+    }
+
+    /* Fade-in on scroll */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in { opacity: 1; transform: none; }
+      .hero-scroll::after { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav>
+    <a href="#" class="nav-logo">Magnolia <span>Mujeres</span></a>
+    <ul class="nav-links">
+      <li><a href="#collection">Collection</a></li>
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#process">How It Works</a></li>
+      <li><a href="#inquire" class="nav-cta">Inquire</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="hero" id="home">
+
+    <!-- Magnolia watermark SVG — hand-drawn style botanical blossom -->
+    <svg class="hero-watermark" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- Petals radiating from center — stylized magnolia -->
+      <ellipse cx="300" cy="300" rx="8" ry="8" fill="#2D4A3E"/>
+      <!-- Petal 1 -->
+      <path d="M300 300 C290 260 270 210 300 160 C330 210 310 260 300 300Z" fill="#2D4A3E" opacity="0.9"/>
+      <!-- Petal 2 -->
+      <path d="M300 300 C336 285 384 270 420 295 C396 326 348 322 300 300Z" fill="#2D4A3E" opacity="0.85"/>
+      <!-- Petal 3 -->
+      <path d="M300 300 C314 337 322 388 297 420 C270 399 260 348 300 300Z" fill="#2D4A3E" opacity="0.9"/>
+      <!-- Petal 4 -->
+      <path d="M300 300 C264 315 212 324 180 302 C201 272 250 264 300 300Z" fill="#2D4A3E" opacity="0.85"/>
+      <!-- Petal 5 (diagonal NE) -->
+      <path d="M300 300 C326 270 360 235 400 230 C405 268 378 302 300 300Z" fill="#2D4A3E" opacity="0.7"/>
+      <!-- Petal 6 (diagonal SE) -->
+      <path d="M300 300 C330 326 356 362 352 404 C316 408 294 374 300 300Z" fill="#2D4A3E" opacity="0.7"/>
+      <!-- Petal 7 (diagonal SW) -->
+      <path d="M300 300 C270 328 238 356 196 354 C190 317 218 288 300 300Z" fill="#2D4A3E" opacity="0.7"/>
+      <!-- Petal 8 (diagonal NW) -->
+      <path d="M300 300 C274 270 244 236 202 228 C196 266 222 298 300 300Z" fill="#2D4A3E" opacity="0.7"/>
+      <!-- Outer ring suggestion -->
+      <circle cx="300" cy="300" r="160" stroke="#2D4A3E" stroke-width="0.5" fill="none" opacity="0.3" stroke-dasharray="4 8"/>
+      <circle cx="300" cy="300" r="210" stroke="#2D4A3E" stroke-width="0.5" fill="none" opacity="0.15" stroke-dasharray="2 12"/>
+    </svg>
+
+    <p class="hero-eyebrow">Los Angeles · Handmade · One of a Kind</p>
+    <h1 class="hero-title">Made by <em>mujeres</em>,<br>kept forever</h1>
+    <p class="hero-sub">Satin ribbon florals, forever flower arrangements, and handmade keepsakes — each one built by hand, made to last, and meant to be given or kept for life.</p>
+    <div class="hero-actions">
+      <a href="#collection" class="btn-primary">View the Collection</a>
+      <a href="#story" class="btn-secondary">Our Story</a>
+    </div>
+    <div class="hero-scroll">Scroll</div>
+  </section>
+
+  <!-- ── Collection ── -->
+  <section id="collection">
+    <div class="section-inner">
+      <div class="collection-header">
+        <div>
+          <p class="section-eyebrow">The Collection</p>
+          <h2 class="section-title">Each piece is <em>one of a kind</em></h2>
+        </div>
+        <a href="#inquire" class="btn-secondary">Inquire About a Piece</a>
+      </div>
+
+      <!-- ── Forever Flowers showcase card ── -->
+      <div class="showcase-card fade-in">
+        <div class="showcase-img">
+          <img src="flowers-box.jpg" alt="Ivory satin ribbon roses in a black designer gift box with gold chain" />
+        </div>
+        <div class="showcase-body">
+          <p class="section-eyebrow">Forever Flowers</p>
+          <h3 class="showcase-title">Handmade satin florals that <em>never fade</em></h3>
+          <p class="showcase-desc">Every flower is cut, shaped, and assembled by hand from satin ribbon. No two arrangements are identical. Available as gift boxes, statement arrangements, and wearable pieces.</p>
+          <div class="showcase-items">
+            <div class="showcase-item">
+              <div class="showcase-item-img">
+                <img src="flowers-box.jpg" alt="Satin ribbon rose gift box" />
+              </div>
+              <div class="showcase-item-info">
+                <p class="showcase-item-name">La Caja — Gift Box</p>
+                <p class="showcase-item-desc">Satin roses in a designer-style box with gold chain. Ivory, red, blush, or mauve.</p>
+              </div>
+            </div>
+            <div class="showcase-item">
+              <div class="showcase-item-img">
+                <img src="flowers-heart.jpg" alt="Heart-shaped satin flower arrangement" />
+              </div>
+              <div class="showcase-item-info">
+                <p class="showcase-item-name">Corazón en Flor — Heart Arrangement</p>
+                <p class="showcase-item-desc">Heart-shaped mixed arrangement: roses, carnations, sunflowers, lotus. A statement piece.</p>
+              </div>
+            </div>
+            <div class="showcase-item">
+              <div class="showcase-item-img">
+                <img src="flowers-clip.jpg" alt="Satin sunflower hair clip" />
+              </div>
+              <div class="showcase-item-info">
+                <p class="showcase-item-name">Girasol — Hair Clip</p>
+                <p class="showcase-item-desc">Satin sunflower with a hand-crocheted center. Wearable, lightweight, one of a kind.</p>
+              </div>
+            </div>
+          </div>
+          <a href="#inquire" class="btn-primary" style="display:inline-block; margin-top:2rem;">Inquire About Forever Flowers</a>
+        </div>
+      </div>
+
+      <!-- ── Bookmarks showcase card ── -->
+      <div class="showcase-card showcase-card--reverse fade-in">
+        <div class="showcase-img">
+          <img src="bookmarks.jpg" alt="Nine handmade beaded bookmarks laid out on white linen" />
+        </div>
+        <div class="showcase-body">
+          <p class="section-eyebrow">Bookmarks</p>
+          <h3 class="showcase-title">Beaded bookmarks for <em>readers who collect</em></h3>
+          <p class="showcase-desc">Nine one-of-a-kind beaded bookmarks — silver and brass shanks, genuine stones, glass focal beads. Each named, each different. The kind of thing you keep or give to someone who matters.</p>
+          <div class="bookmark-list">
+            <div class="bookmark-row"><span class="bookmark-name">La Corazón</span><span class="bookmark-detail">Silver · heart charm · garnet & pearl</span></div>
+            <div class="bookmark-row"><span class="bookmark-name">Campanita</span><span class="bookmark-detail">Silver · blue bell flower · crystal cascade</span></div>
+            <div class="bookmark-row"><span class="bookmark-name">Ojo Azul</span><span class="bookmark-detail">Silver · evil eye · zebra fish focal</span></div>
+            <div class="bookmark-row"><span class="bookmark-name">Amatista</span><span class="bookmark-detail">Brass · amethyst & sage pearl · jade drop</span></div>
+            <div class="bookmark-row"><span class="bookmark-name">Millefiori</span><span class="bookmark-detail">Brass · Italian glass roses · iridescent crystal</span></div>
+            <div class="bookmark-row"><span class="bookmark-name">Ámbar</span><span class="bookmark-detail">Brass · champagne crystal · teal teardrop</span></div>
+            <div class="bookmark-row"><span class="bookmark-name">La Sirena</span><span class="bookmark-detail">Brass · mermaid shank · raw crystal point</span></div>
+            <div class="bookmark-row"><span class="bookmark-name">Engranaje</span><span class="bookmark-detail">Brass · gear shank · smoky topaz</span></div>
+            <div class="bookmark-row"><span class="bookmark-name">El Cisne</span><span class="bookmark-detail">Brass · swan shank · garnet & onyx</span></div>
+          </div>
+          <a href="#inquire" class="btn-primary" style="display:inline-block; margin-top:2rem;">Inquire About a Bookmark</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Our Story ── -->
+  <section id="story">
+    <div class="section-inner">
+      <div class="story-layout">
+
+        <div class="story-visual fade-in">
+          <div class="story-visual-inner">
+            <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="16" stroke="#2D4A3E" stroke-width="1.2"/><path d="M26 10 C22 18 18 22 26 26 C34 22 30 18 26 10Z" fill="#2D4A3E" opacity="0.4"/></svg>
+            <span class="story-visual-label">Photo coming soon</span>
+          </div>
+        </div>
+
+        <div class="story-text fade-in">
+          <p class="section-eyebrow">Who We Are</p>
+          <h2 class="section-title">A family of <em>women</em>, making things by hand</h2>
+          <p>Magnolia Mujeres started in 2020 — a mother and daughter, both artists, craftswomen, designers. What began as something made for ourselves became something people kept asking about. So we made it real.</p>
+          <p>Every piece comes from that same place: hands that know what they're doing, eyes that care how it looks, and two women who make things together. We're based in Los Angeles. We love honest materials, real conversations, and jewelry that means something to the person wearing it.</p>
+          <div class="story-details">
+            <div class="story-detail">
+              <p class="story-detail-label">Est.</p>
+              <p class="story-detail-value">2020</p>
+            </div>
+            <div class="story-detail">
+              <p class="story-detail-label">Based in</p>
+              <p class="story-detail-value">Los Angeles, CA</p>
+            </div>
+            <div class="story-detail">
+              <p class="story-detail-label">Each piece</p>
+              <p class="story-detail-value">Handmade</p>
+            </div>
+            <div class="story-detail">
+              <p class="story-detail-label">Also on</p>
+              <p class="story-detail-value"><a href="https://www.magnoliamujeres.etsy.com" target="_blank" rel="noopener" style="color:inherit; text-decoration: underline; text-underline-offset: 3px;">Etsy</a></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── How It Works / Process ── -->
+  <section id="process">
+    <div class="section-inner">
+      <p class="section-eyebrow">How It Works</p>
+      <h2 class="section-title">Simple. <em>Personal.</em> Direct.</h2>
+
+      <div class="process-grid">
+        <div class="process-step fade-in">
+          <p class="process-step-num">1</p>
+          <h3 class="process-step-title">Find something you love</h3>
+          <p class="process-step-body">Browse the collection. If a piece speaks to you — the materials, the shape, the story — that's where it starts.</p>
+        </div>
+        <div class="process-step fade-in">
+          <p class="process-step-num">2</p>
+          <h3 class="process-step-title">Reach out directly</h3>
+          <p class="process-step-body">Send us a message — through the form, by email, or on Instagram. Tell us what you're interested in and any questions you have.</p>
+        </div>
+        <div class="process-step fade-in">
+          <p class="process-step-num">3</p>
+          <h3 class="process-step-title">We'll make it happen</h3>
+          <p class="process-step-body">We'll talk through details — chain length, stone preferences, customization. Then we sort payment and shipping, personally.</p>
+        </div>
+        <div class="process-step fade-in">
+          <p class="process-step-num">4</p>
+          <h3 class="process-step-title">Wears for a lifetime</h3>
+          <p class="process-step-body">Each piece ships with care notes. Handmade means it was made for keeps — and we stand behind everything we send out.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Inquire ── -->
+  <section id="inquire">
+    <div class="section-inner">
+      <div class="inquire-layout">
+
+        <div class="inquire-left fade-in">
+          <p class="section-eyebrow">Get in Touch</p>
+          <h2 class="section-title">Let's find the right <em>piece</em> for you</h2>
+          <p class="section-body">We love talking about the work. If you saw something in the collection, want to know more, or have something custom in mind — reach out any way that feels natural.</p>
+
+          <div class="inquire-channels">
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/magnolia.mujeres" target="_blank" rel="noopener" class="channel-link">
+              <div class="channel-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#2D4A3E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+              </div>
+              <div class="channel-text">
+                <p class="channel-label">Instagram</p>
+                <p class="channel-value">@magnolia.mujeres</p>
+              </div>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:hello@magnoliamujeres.com" class="channel-link">
+              <div class="channel-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#2D4A3E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div class="channel-text">
+                <p class="channel-label">Email</p>
+                <p class="channel-value">hello@magnoliamujeres.com</p>
+              </div>
+            </a>
+
+            <!-- Etsy (optional) -->
+            <a href="https://www.magnoliamujeres.etsy.com" target="_blank" rel="noopener" class="channel-link">
+              <div class="channel-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#2D4A3E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                </svg>
+              </div>
+              <div class="channel-text">
+                <p class="channel-label">Also on Etsy</p>
+                <p class="channel-value">magnoliamujeres</p>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Contact Form (Formspree) -->
+        <div class="inquire-form fade-in">
+          <p class="form-eyebrow">Send a message</p>
+          <!-- ACTION: replace with your Formspree endpoint before launch -->
+          <form action="https://formspree.io/f/REPLACE_THIS" method="POST">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="First and last name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="interest">I'm interested in…</label>
+              <select id="interest" name="interest">
+                <option value="" disabled selected>Select one</option>
+                <option value="specific-piece">A specific piece from the collection</option>
+                <option value="custom">Something custom</option>
+                <option value="gift">A gift for someone</option>
+                <option value="general">Just want to say hello</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us which piece caught your eye, any customization you're thinking about, questions about materials — whatever's on your mind." required></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send Message</button>
+            <p class="form-note">We typically respond within 1–2 days. For faster replies, DM us on Instagram.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Etsy Banner ── -->
+  <div class="etsy-banner">
+    <p>You can also find our work on Etsy.</p>
+    <a href="https://www.magnoliamujeres.etsy.com" target="_blank" rel="noopener">Visit our Etsy shop →</a>
+  </div>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p class="footer-logo">Magnolia <span>Mujeres</span></p>
+        <p class="footer-tagline">Handmade with intention. Los Angeles.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#collection">Collection</a>
+        <a href="#story">Our Story</a>
+        <a href="#process">How It Works</a>
+        <a href="#inquire">Inquire</a>
+        <a href="https://www.magnoliamujeres.etsy.com" target="_blank" rel="noopener">Etsy Shop</a>
+      </div>
+      <div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/magnolia.mujeres" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="mailto:hello@magnoliamujeres.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Magnolia Mujeres. All rights reserved.</p>
+      <p>Site by <a href="https://outfrontstudio.com" target="_blank" rel="noopener">Outfront Studio</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll fade-in observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Smooth nav scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const offset = 80;
+          window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
