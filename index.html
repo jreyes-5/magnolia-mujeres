@@ -110,6 +110,15 @@
             "description": "Nine one-of-a-kind beaded bookmarks with silver and brass shanks, genuine stones, and glass focal beads. Each named and handmade in Los Angeles.",
             "image": "https://magnoliamujeres.com/bookmarks.jpg"
           }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Handmade Beaded Necklaces",
+            "description": "One-of-a-kind multi-strand and layered beaded necklaces featuring frosted glass, faceted crystal, and freshwater pearl. Handmade in Los Angeles.",
+            "image": "https://magnoliamujeres.com/necklace-1.jpg"
+          }
         }
       ]
     }
@@ -584,9 +593,9 @@
     }
     .showcase-img img {
       width: 100%;
-      aspect-ratio: 3/4;
+      aspect-ratio: 4/3;
       object-fit: cover;
-      object-position: center 20%;
+      object-position: center;
       display: block;
     }
 
@@ -738,9 +747,59 @@
       .showcase-card { grid-template-columns: 1fr; gap: 2rem; direction: ltr; }
       .showcase-card--reverse { direction: ltr; }
       .showcase-img { position: static; }
-      .showcase-img img { aspect-ratio: 16/9; object-position: center 30%; }
+      .showcase-img img { aspect-ratio: 4/3; object-position: center; }
       .bookmark-row { flex-direction: column; gap: 0.15rem; }
       .bookmark-detail { text-align: left; }
+    }
+
+    /* ── Lightbox gallery ── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(26,46,38,0.96);
+      z-index: 200;
+      padding: 5rem 2rem;
+      overflow-y: auto;
+    }
+    .lightbox.open { display: block; }
+    .lightbox-close {
+      position: fixed;
+      top: 1.5rem;
+      right: 2rem;
+      font-size: 2.2rem;
+      color: var(--cream);
+      cursor: pointer;
+      z-index: 201;
+      line-height: 1;
+      font-family: var(--sans);
+      font-weight: 300;
+      transition: color 0.2s;
+    }
+    .lightbox-close:hover { color: var(--gold); }
+    .lightbox-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .lightbox-item {
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .lightbox-item img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .lightbox { padding: 4rem 1rem; }
+      .lightbox-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .lightbox-close { top: 1rem; right: 1.2rem; }
     }
 
     /* ── Story ── */
@@ -1129,7 +1188,7 @@
       .showcase-card { grid-template-columns: 1fr; gap: 2rem; direction: ltr; }
       .showcase-card--reverse { direction: ltr; }
       .showcase-img { position: static; }
-      .showcase-img img { aspect-ratio: 16/9; object-position: center 30%; }
+      .showcase-img img { aspect-ratio: 4/3; object-position: center; }
       .bookmark-row { flex-direction: column; gap: 0.15rem; }
       .bookmark-detail { text-align: left; }
     }
@@ -1361,8 +1420,37 @@
         </div>
       </div>
 
+      <!-- ── Necklaces showcase card ── -->
+      <div class="showcase-card fade-in">
+        <div class="showcase-img">
+          <img src="necklace-1.jpg" alt="Handmade beaded statement necklace with pearl drape, displayed on velvet bust" />
+        </div>
+        <div class="showcase-body">
+          <p class="section-eyebrow">Necklaces</p>
+          <h3 class="showcase-title">Beaded necklaces, <em>one of a kind</em></h3>
+          <p class="showcase-desc">Multi-strand statement pieces and layered beaded necklaces — frosted glass, faceted crystal, freshwater pearl. Each one handmade and entirely unique. More pieces added as they're finished.</p>
+          <button class="btn-primary" onclick="openGallery()" style="border:none; cursor:pointer;">View Necklace Gallery</button>
+        </div>
+      </div>
+
     </div>
   </section>
+
+  <!-- ── Necklace Lightbox Gallery ── -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-close" onclick="closeGallery()">&times;</div>
+    <div class="lightbox-grid">
+      <div class="lightbox-item">
+        <img src="necklace-1.jpg" alt="Multi-strand beaded necklace with pearl drape" />
+      </div>
+      <div class="lightbox-item">
+        <img src="necklace-2.jpg" alt="Double-strand iridescent aqua beaded necklace" />
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:3rem;">
+      <a href="#inquire" onclick="closeGallery()" class="btn-primary">Inquire About a Necklace</a>
+    </div>
+  </div>
 
   <!-- ── Our Story ── -->
   <section id="story">
@@ -1568,6 +1656,16 @@
   </footer>
 
   <script>
+    // Necklace lightbox gallery
+    function openGallery() {
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeGallery() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
     // Hamburger menu
     function toggleMenu() {
       document.getElementById('nav-links').classList.toggle('open');
