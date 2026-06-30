@@ -497,6 +497,61 @@
       line-height: 1.5;
     }
 
+    /* Expandable showcase items */
+    .showcase-item.expandable { cursor: pointer; }
+    .showcase-item-collapsed {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .expand-icon {
+      margin-left: auto;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--gold);
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+      line-height: 1;
+    }
+    .showcase-item.open .expand-icon { transform: rotate(45deg); }
+
+    .showcase-item-expanded {
+      display: none;
+      margin-top: 1rem;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .showcase-item.open .showcase-item-expanded { display: block; }
+    .showcase-item-expanded img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      border-radius: 2px 2px 0 0;
+    }
+    .showcase-item-expanded-info {
+      padding: 1.2rem 1.4rem 1.4rem;
+      background: var(--linen);
+      border-radius: 0 0 2px 2px;
+    }
+    .showcase-item-expanded-info .showcase-item-name {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--green-deep);
+      margin-bottom: 0.4rem;
+    }
+    .showcase-item-expanded-info .showcase-item-desc {
+      font-family: var(--sans);
+      font-size: 0.83rem;
+      font-weight: 300;
+      color: var(--green-deep);
+      opacity: 0.7;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
     /* Bookmark list */
     .bookmark-list { display: flex; flex-direction: column; gap: 0; }
     .bookmark-row {
@@ -981,8 +1036,8 @@
     </svg>
 
     <p class="hero-eyebrow">Los Angeles · Handmade · One of a Kind</p>
-    <h1 class="hero-title">Made by <em>mujeres</em>,<br>kept forever</h1>
-    <p class="hero-sub">Satin ribbon florals, forever flower arrangements, and handmade keepsakes — each one built by hand, made to last, and meant to be given or kept for life.</p>
+    <h1 class="hero-title">Made by <em>mujeres</em>,<br>worn for life</h1>
+    <p class="hero-sub">Each piece is crafted by hand, made with intention, and designed to be worn every day — and passed down someday.</p>
     <div class="hero-actions">
       <a href="#collection" class="btn-primary">View the Collection</a>
       <a href="#story" class="btn-secondary">Our Story</a>
@@ -1011,31 +1066,64 @@
           <h3 class="showcase-title">Handmade satin florals that <em>never fade</em></h3>
           <p class="showcase-desc">Every flower is cut, shaped, and assembled by hand from satin ribbon. No two arrangements are identical. Available as gift boxes, statement arrangements, and wearable pieces.</p>
           <div class="showcase-items">
-            <div class="showcase-item">
-              <div class="showcase-item-img">
-                <img src="flowers-box.jpg" alt="Satin ribbon rose gift box" />
+            <div class="showcase-item expandable" onclick="toggleExpand(this)">
+              <div class="showcase-item-collapsed">
+                <div class="showcase-item-img">
+                  <img src="flowers-box.jpg" alt="Satin ribbon rose gift box" />
+                </div>
+                <div class="showcase-item-info">
+                  <p class="showcase-item-name">La Caja — Gift Box</p>
+                  <p class="showcase-item-desc">Satin roses in a designer-style box with gold chain. Ivory, red, blush, or mauve.</p>
+                </div>
+                <span class="expand-icon">+</span>
               </div>
-              <div class="showcase-item-info">
-                <p class="showcase-item-name">La Caja — Gift Box</p>
-                <p class="showcase-item-desc">Satin roses in a designer-style box with gold chain. Ivory, red, blush, or mauve.</p>
+              <div class="showcase-item-expanded">
+                <img src="flowers-box.jpg" alt="Satin ribbon rose gift box with gold chain" />
+                <div class="showcase-item-expanded-info">
+                  <p class="showcase-item-name">La Caja — Gift Box</p>
+                  <p class="showcase-item-desc">Handmade satin ribbon roses arranged in a designer-style gift box with gold chain handle. Available in ivory, red, blush, and mauve. Flowers that never wilt, never fade — made to be kept or given.</p>
+                  <a href="#inquire" class="piece-inquire">Inquire →</a>
+                </div>
               </div>
             </div>
-            <div class="showcase-item">
-              <div class="showcase-item-img">
+            <div class="showcase-item expandable" onclick="toggleExpand(this)">
+              <div class="showcase-item-collapsed">
+                <div class="showcase-item-img">
+                  <img src="flowers-heart.jpg" alt="Heart-shaped satin flower arrangement" />
+                </div>
+                <div class="showcase-item-info">
+                  <p class="showcase-item-name">Corazón en Flor — Heart Arrangement</p>
+                  <p class="showcase-item-desc">Heart-shaped mixed arrangement: roses, carnations, sunflowers, lotus. A statement piece.</p>
+                </div>
+                <span class="expand-icon">+</span>
+              </div>
+              <div class="showcase-item-expanded">
                 <img src="flowers-heart.jpg" alt="Heart-shaped satin flower arrangement" />
-              </div>
-              <div class="showcase-item-info">
-                <p class="showcase-item-name">Corazón en Flor — Heart Arrangement</p>
-                <p class="showcase-item-desc">Heart-shaped mixed arrangement: roses, carnations, sunflowers, lotus. A statement piece.</p>
+                <div class="showcase-item-expanded-info">
+                  <p class="showcase-item-name">Corazón en Flor — Heart Arrangement</p>
+                  <p class="showcase-item-desc">A full heart-shaped arrangement packed with handmade satin roses, cream carnations, golden sunflowers, and pink lotus blooms. A statement piece for any occasion — anniversaries, birthdays, or just because.</p>
+                  <a href="#inquire" class="piece-inquire">Inquire →</a>
+                </div>
               </div>
             </div>
-            <div class="showcase-item">
-              <div class="showcase-item-img">
-                <img src="flowers-clip.jpg" alt="Satin sunflower hair clip" />
+            <div class="showcase-item expandable" onclick="toggleExpand(this)">
+              <div class="showcase-item-collapsed">
+                <div class="showcase-item-img">
+                  <img src="flowers-clip.jpg" alt="Satin sunflower hair clip" />
+                </div>
+                <div class="showcase-item-info">
+                  <p class="showcase-item-name">Girasol — Hair Clip</p>
+                  <p class="showcase-item-desc">Satin sunflower with a hand-crocheted center. Wearable, lightweight, one of a kind.</p>
+                </div>
+                <span class="expand-icon">+</span>
               </div>
-              <div class="showcase-item-info">
-                <p class="showcase-item-name">Girasol — Hair Clip</p>
-                <p class="showcase-item-desc">Satin sunflower with a hand-crocheted center. Wearable, lightweight, one of a kind.</p>
+              <div class="showcase-item-expanded">
+                <img src="flowers-clip.jpg" alt="Golden satin sunflower hair clip worn in dark hair" />
+                <div class="showcase-item-expanded-info">
+                  <p class="showcase-item-name">Girasol — Hair Clip</p>
+                  <p class="showcase-item-desc">A satin ribbon sunflower with a hand-crocheted brown center, worn as a hair clip. Bright, bold, and surprisingly lightweight. The wearable version of the forever flower — goes with everything.</p>
+                  <a href="#inquire" class="piece-inquire">Inquire →</a>
+                </div>
               </div>
             </div>
           </div>
@@ -1086,7 +1174,7 @@
           <p class="section-eyebrow">Who We Are</p>
           <h2 class="section-title">A family of <em>women</em>, making things by hand</h2>
           <p>Magnolia Mujeres started in 2020 — a mother and daughter, both artists, craftswomen, designers. What began as something made for ourselves became something people kept asking about. So we made it real.</p>
-          <p>Every piece comes from that same place: hands that know what they're doing, eyes that care how it looks, and two women who make things together. We're based in Los Angeles. We love honest materials, real conversations, and jewelry that means something to the person wearing it.</p>
+          <p>Every piece comes from that same place: hands that know what they're doing, eyes that care how it looks, and two women who make things together. We're based in Los Angeles. We love honest materials and pieces that mean something to the person wearing them.</p>
           <div class="story-details">
             <div class="story-detail">
               <p class="story-detail-label">Est.</p>
@@ -1200,7 +1288,7 @@
         <div class="inquire-form fade-in">
           <p class="form-eyebrow">Send a message</p>
           <!-- ACTION: replace with your Formspree endpoint before launch -->
-          <form action="https://formspree.io/f/REPLACE_THIS" method="POST">
+          <form action="https://formspree.io/f/mlgywrwr" method="POST">
             <div class="form-group">
               <label for="name">Your Name</label>
               <input type="text" id="name" name="name" placeholder="First and last name" required />
@@ -1274,6 +1362,13 @@
   </footer>
 
   <script>
+    // Flower accordion
+    function toggleExpand(el) {
+      const isOpen = el.classList.contains('open');
+      document.querySelectorAll('.showcase-item.expandable').forEach(i => i.classList.remove('open'));
+      if (!isOpen) el.classList.add('open');
+    }
+
     // Scroll fade-in observer
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
