@@ -3,13 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Magnolia Mujeres — Handmade Jewelry</title>
-  <meta name="description" content="Handcrafted jewelry made with intention by a family of women. Each piece is one of a kind." />
-  <meta property="og:title" content="Magnolia Mujeres — Handmade Jewelry" />
-  <meta property="og:description" content="Handcrafted jewelry made with intention by a family of women. Each piece is one of a kind." />
+
+  <!-- Primary SEO -->
+  <title>Magnolia Mujeres — Handmade Forever Flowers & Bookmarks | Los Angeles</title>
+  <meta name="description" content="Handmade satin ribbon florals, forever flower arrangements, beaded bookmarks, and wearable pieces by a mother and daughter in Los Angeles. Each piece is one of a kind." />
+  <meta name="keywords" content="handmade forever flowers Los Angeles, satin ribbon flowers, handmade bookmarks, flower gift boxes LA, handmade jewelry Los Angeles, Latina artisans, one of a kind gifts" />
+  <meta name="author" content="Magnolia Mujeres" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Geo targeting -->
+  <meta name="geo.region" content="US-CA" />
+  <meta name="geo.placename" content="Los Angeles, California" />
+  <meta name="geo.position" content="34.0522;-118.2437" />
+  <meta name="ICBM" content="34.0522, -118.2437" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Magnolia Mujeres — Handmade Forever Flowers & Bookmarks" />
+  <meta property="og:description" content="Satin ribbon florals, forever flower arrangements, and beaded bookmarks made by hand in Los Angeles. Each piece one of a kind." />
   <meta property="og:url" content="https://magnoliamujeres.com" />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://magnoliamujeres.com/flowers-box.jpg" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Magnolia Mujeres" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Magnolia Mujeres — Handmade Forever Flowers & Bookmarks" />
+  <meta name="twitter:description" content="Satin ribbon florals and beaded bookmarks made by hand in Los Angeles." />
+  <meta name="twitter:image" content="https://magnoliamujeres.com/flowers-box.jpg" />
+
   <link rel="canonical" href="https://magnoliamujeres.com" />
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Magnolia Mujeres",
+    "description": "Handmade satin ribbon forever flowers, flower arrangements, beaded bookmarks, and wearable pieces by a mother and daughter in Los Angeles.",
+    "url": "https://magnoliamujeres.com",
+    "email": "hello@magnoliamujeres.com",
+    "foundingDate": "2020",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Los Angeles",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 34.0522,
+      "longitude": -118.2437
+    },
+    "sameAs": [
+      "https://www.instagram.com/magnolia.mujeres",
+      "https://www.magnoliamujeres.etsy.com"
+    ],
+    "image": "https://magnoliamujeres.com/flowers-box.jpg",
+    "priceRange": "$$",
+    "currenciesAccepted": "USD",
+    "paymentAccepted": "Inquiry based"
+  }
+  </script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -97,7 +152,7 @@
       text-decoration: none;
       transition: background 0.2s !important;
     }
-    .nav-cta:hover { background: var(--green-dark) !important; color: var(--cream) !important; }
+    .nav-hamburger { display: none; }
 
     /* ── Hero ── */
     .hero {
@@ -971,17 +1026,65 @@
       .inquire-layout { grid-template-columns: 1fr; gap: 3rem; }
       .story-visual { aspect-ratio: 16/9; max-height: 280px; }
       .footer-inner { flex-direction: column; }
+      .showcase-card { grid-template-columns: 1fr; gap: 2rem; direction: ltr; }
+      .showcase-card--reverse { direction: ltr; }
+      .showcase-img { position: static; }
+      .showcase-img img { aspect-ratio: 16/9; object-position: center 30%; }
+      .bookmark-row { flex-direction: column; gap: 0.15rem; }
+      .bookmark-detail { text-align: left; }
     }
 
     @media (max-width: 600px) {
       nav { padding: 1rem 1.2rem; }
       .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: var(--cream);
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        z-index: 99;
+      }
+      .nav-links.open a {
+        font-size: 1.2rem;
+        letter-spacing: 0.1em;
+      }
+      .nav-hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 4px;
+        z-index: 101;
+        position: relative;
+      }
+      .nav-hamburger span {
+        display: block;
+        width: 24px;
+        height: 1.5px;
+        background: var(--green-deep);
+        transition: transform 0.3s, opacity 0.3s;
+      }
+      .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+      .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+      .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
       section { padding: 4rem 1.2rem; }
       .collection-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
       .process-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .hero-actions { flex-direction: column; align-items: center; }
       footer { padding: 2.5rem 1.2rem; }
       .etsy-banner { padding: 1.2rem 1.5rem; }
+      .showcase-card { gap: 1.5rem; margin-bottom: 3.5rem; padding-bottom: 3.5rem; }
+      .showcase-title { font-size: 1.5rem; }
+      .showcase-item-collapsed { gap: 0.75rem; }
+      .showcase-item-img { width: 52px; height: 52px; }
+      .inquire-layout { gap: 2rem; }
+      .hero-title { font-size: clamp(2.4rem, 12vw, 4rem); }
+      .section-title { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+      .nav-cta { display: none; }
     }
 
     /* Fade-in on scroll */
@@ -999,12 +1102,15 @@
   <!-- ── Navigation ── -->
   <nav>
     <a href="#" class="nav-logo">Magnolia <span>Mujeres</span></a>
-    <ul class="nav-links">
-      <li><a href="#collection">Collection</a></li>
-      <li><a href="#story">Our Story</a></li>
-      <li><a href="#process">How It Works</a></li>
-      <li><a href="#inquire" class="nav-cta">Inquire</a></li>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#collection" onclick="closeMenu()">Collection</a></li>
+      <li><a href="#story" onclick="closeMenu()">Our Story</a></li>
+      <li><a href="#process" onclick="closeMenu()">How It Works</a></li>
+      <li><a href="#inquire" class="nav-cta" onclick="closeMenu()">Inquire</a></li>
     </ul>
+    <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
   </nav>
 
   <!-- ── Hero ── -->
@@ -1362,6 +1468,18 @@
   </footer>
 
   <script>
+    // Hamburger menu
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('open');
+      document.getElementById('hamburger').classList.toggle('open');
+      document.body.style.overflow = document.getElementById('nav-links').classList.contains('open') ? 'hidden' : '';
+    }
+    function closeMenu() {
+      document.getElementById('nav-links').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
     // Flower accordion
     function toggleExpand(el) {
       const isOpen = el.classList.contains('open');
